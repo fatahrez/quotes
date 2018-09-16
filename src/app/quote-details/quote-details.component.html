@@ -1,14 +1,22 @@
 <mat-card>
-<mat-card-header></mat-card-header>
-<mat-card-title>{{quote.quote}}</mat-card-title>
-<mat-card-subtitle>{{quote.submittor}}</mat-card-subtitle>
-<p>{{quote.theQuote}}</p>
+<mat-card-header>
+  <mat-card-title>{{quote.quote}}</mat-card-title>
+  <mat-card-subtitle>{{quote.submittor}}</mat-card-subtitle>
+</mat-card-header>
 
-<mat-card-action>
+<mat-card-content>
+<p>{{quote.theQuote}}</p>
+</mat-card-content>
+<mat-card-actions>
 <button mat-flat-button color="primary" (click)='increaseVote(true)'>upvote</button>
-<p>{{quote.upVote}}</p>
+
 <button mat-flat-button color="accent" (click)='increaseVote(false)'>downvote</button>
-<p>{{quote.downVote}}</p>
+
+</mat-card-actions>
+<div class="row">
+<p class="col-md-6">{{quote.upVote}}</p>
+<p class="col-md-3">{{quote.downVote}}</p>
+<div class="col-md-3"></div>
+</div>
 <button mat-flat-button color="warn" (click)= 'deleteQuote(true)'>Delete Quote</button>
-</mat-card-action>
 </mat-card>

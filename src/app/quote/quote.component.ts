@@ -8,9 +8,15 @@ import { Quote } from '../quote';
 })
 export class QuoteComponent implements OnInit {
   quotes = [
-    new Quote(1, 'Abdul', 'Hey thea'),
-    new Quote(2, 'Fatah', 'We cool')
+    new Quote(1, 'Abdul', 'yeye', 'Hey thea'),
+    new Quote(2, 'Fatah', 'mwenye', 'We cool')
   ];
+
+  addNewQuote(id: number, author: string, submittor: string, quote: string) {
+      // const quoteLength = this.quotes.length;
+      // const idNew = quoteLength + 1;
+      return this.quotes.push(new Quote(id, author, submittor, quote));
+    }
 
   deleteQuote(isDelete, index) {
     if (isDelete) {

@@ -1,7 +1,17 @@
-<app-quote-form></app-quote-form>
-<div *ngFor ='let quote of quotes; let i = index'>
-  <h1>{{quote.author}}</h1>
-  <button (click)= 'toogleDetails(i)'>Show Quote</button>
-  <app-quote-details *ngIf="quote.showQuote" [quote]='quote' (isDelete)= 'deleteQuote($event, i)'></app-quote-details>
-
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <!-- <app-quote-form (addQuote)= 'addNewQuote($event)'></app-quote-form> -->
+      <app-quote-form></app-quote-form>
+    </div>
+    <div class="col-md-6">
+      <div class="style">  
+        <div *ngFor ='let quote of quotes; let i = index'>
+        <h1>{{quote.author}}</h1>
+        <button (click)= 'toogleDetails(i)'>Show Quote</button>
+        <app-quote-details *ngIf="quote.showQuote" [quote]='quote' (isDelete)= 'deleteQuote($event, i)'></app-quote-details>
+      </div>
+    </div>
+    </div>
+  </div>
 </div>

@@ -1,0 +1,47 @@
+<mat-card>
+  <mat-card-content>
+     <h2>New Quote</h2>
+    <!-- <form (ngSubmit)='submitQuote()' #quoteForm = 'ngForm'> -->
+    <form #quoteForm = 'ngForm'>
+      <div class="form-group">
+        <section>
+          <mat-form-field>
+            <!-- <input matInput id="author" class="formControl" [(ngModel)]='newQuote.author' name="author" placeholder="Author" required> -->
+            <input matInput class="formControl" #author (keyup.enter)="addNewQuote(author.value)" (blur)="addNewQuote(author.value); author.value='' " placeholder="Author" required>
+          </mat-form-field>
+          <!-- <p>display {{newQuote.author}}</p> testing whether quotes input works-->
+        </section>
+      </div>
+      <div class="form-group">
+        <section>
+          <mat-form-field>
+            <!-- <input matInput id="submission" class="formControl" [(ngModel)]='newQuote.submittor' name="submittor" placeholder="Submitted by:" > -->
+            <input matInput class="formControl" #submittor (keyup.enter)="addNewQuote(submittor.value)" (blur)="addNewQuote(submittor.value); submittor.value='' " placeholder="Submitted by:" required>
+          </mat-form-field>
+          <!-- <p>display {{newQuote.submittor}}</p> -->
+        </section>
+      </div>
+      <div class="form-group">
+        <section>  
+          <mat-form-field>
+            <!-- <input matInput id="theQuote" class="formControl" [(ngModel)]='newQuote.theQuote' name="theQuote" placeholder="Quote" > -->
+            <input matInput class="formControl" #quote (keyup.enter)="addNewQuote(quote.value)" (blur)="addNewQuote(quote.value); quote.value=''" placeholder="Enter Quote" required>
+          </mat-form-field>
+          <!-- <p>display {{newQuote.quote}}</p> -->
+        </section>
+      </div>
+      <div class="form-group">
+        <section>
+          <mat-form-field>
+            <mat-select placeholder="Category" >
+              <mat-option value='Motivational'>Motivational</mat-option>
+              <mat-option value='Romantic'>Romantic</mat-option>
+              <mat-option value='Funny'>Funny</mat-option>
+            </mat-select> 
+          </mat-form-field>
+        </section>
+      </div>
+      <button (click)="addNewQuote(id.value, author.value, submittor.value, quote.value)" class="btn btn-success btn-lg">Submit</button>
+    </form>
+  </mat-card-content>
+</mat-card>

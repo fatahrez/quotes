@@ -7,6 +7,7 @@ import { Quote } from '../quote';
   styleUrls: ['./quote.component.css']
 })
 export class QuoteComponent implements OnInit {
+  color: string;
   quotes = [
     new Quote('Abdul', 'yeye', 'Hey thea', 0, 0),
     new Quote('Fatah', 'mwenye', 'We cool', 0, 0)
@@ -41,6 +42,7 @@ export class QuoteComponent implements OnInit {
   toogleDetails(index) {
     this.quotes[index].showQuote = !this.quotes[index].showQuote;
   }
+
 
   constructor() { }
 

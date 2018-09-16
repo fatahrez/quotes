@@ -8,19 +8,31 @@ import { Quote } from '../quote';
 })
 export class QuoteComponent implements OnInit {
   quotes = [
-    new Quote(1, 'Abdul', 'yeye', 'Hey thea'),
-    new Quote(2, 'Fatah', 'mwenye', 'We cool')
+    new Quote('Abdul', 'yeye', 'Hey thea', 0, 0),
+    new Quote('Fatah', 'mwenye', 'We cool', 0, 0)
   ];
 
-  addNewQuote(id: number, author: string, submittor: string, quote: string) {
+  get addNewQuoteFunc() {
+    return this.addNewQuote.bind(this);
+  }
+
+  addNewQuote(author: string, submittor: string, theQuote: string) {
       // const quoteLength = this.quotes.length;
       // const idNew = quoteLength + 1;
-      return this.quotes.push(new Quote(id, author, submittor, quote));
+      const quote: Quote = new Quote(author, submittor, theQuote, 0, 0);
+      this.quotes.push(quote);
+    }
+    increaseVote(isVote, index) {
+      if (isVote) {
+        this.quotes[index].upVote += 1;
+      } else {
+        this.quotes[index].downVote += 1;
+      }
     }
 
   deleteQuote(isDelete, index) {
     if (isDelete) {
-      let toDelete = confirm(`Are you sure you want to delete ${this.quotes[index].author}`);
+      const toDelete = confirm(`Are you sure you want to delete ${this.quotes[index].author}`);
     if (toDelete) {
       this.quotes.splice(index, 1);
     }

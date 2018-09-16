@@ -1,3 +1,9 @@
 <p>{{quote.quote}}</p>
 <p>{{quote.submittor}}</p>
+<p>{{quote.theQuote}}</p>
+
+<button (click)='increaseVote(true)'>upvote</button>
+<p>{{quote.upVote}}</p>
+<button (click)='increaseVote(false)'>downvote</button>
+<p>{{quote.downVote}}</p>
 <button (click)= 'deleteQuote(true)'>Delete Quote</button>

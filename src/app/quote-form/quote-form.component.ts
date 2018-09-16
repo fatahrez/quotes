@@ -9,12 +9,12 @@ import { Quote } from '../quote';
 })
 export class QuoteFormComponent implements OnInit {
   @Input() addNewQuote: Function;
-  // @Output() addQuote = new EventEmitter <Quote>();
+  @Output() addQuote = new EventEmitter <Quote>();
 
-  // newQuote = new Quote(1, '', '', '');
-  // submitQuote() {
-  //   this.addQuote.emit(this.newQuote);
-  // }
+  newQuote = new Quote('', '', '', 0, 0);
+  submitQuote() {
+    this.addQuote.emit(this.newQuote);
+  }
   constructor() { }
 
   ngOnInit() {

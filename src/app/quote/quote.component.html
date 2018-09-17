@@ -7,7 +7,7 @@
     <div class="col-md-6">
       <div class="style">  
         <div *ngFor ='let quote of quotes; let i = index'>
-        <h1 [appHighlight]='color'>{{quote.author}}</h1>
+        <h2 [appHighlight]='color'>{{quote.author}}</h2>
         <button mat-stroked-button color='primary' (click)= 'toogleDetails(i)'>Show Quote</button>
         <app-quote-details *ngIf="quote.showQuote" [quote]='quote' (isDelete)= 'deleteQuote($event, i)' (isVote)='increaseVote($event, i)'></app-quote-details>
       </div>

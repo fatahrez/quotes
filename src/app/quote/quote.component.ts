@@ -10,7 +10,7 @@ export class QuoteComponent implements OnInit {
   color: string;
   quotes = [
     new Quote('Zlatan', 'Fatah', 'Genius always finds a way', 0, 0),
-    new Quote('Drake', 'Abdul', 'Started from the bottom now we here', 0, 0)
+    new Quote('Drake', 'Abdul', 'Started from the bottom now we here ', 0, 0)
   ];
 
   get addNewQuoteFunc() {

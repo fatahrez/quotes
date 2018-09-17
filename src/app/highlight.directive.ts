@@ -14,6 +14,7 @@ export class HighlightDirective {
   @HostListener('mouseleave') onmouseleave() {
     this.highlight (null);
   }
+  
   private highlight(color: string) {
     this.elem.nativeElement.style.backgroundColor = color;
   }

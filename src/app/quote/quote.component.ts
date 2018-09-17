@@ -17,7 +17,7 @@ export class QuoteComponent implements OnInit {
     return this.addNewQuote.bind(this);
   }
 
-  addNewQuote(author: string, submittor: string, theQuote: string) {
+  addNewQuote(author: string,  submittor: string, theQuote: string) {
       // const quoteLength = this.quotes.length;
       // const idNew = quoteLength + 1;
       const quote: Quote = new Quote(author, submittor, theQuote, 0, 0);
